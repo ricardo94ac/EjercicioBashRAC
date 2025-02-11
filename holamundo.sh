@@ -11,3 +11,5 @@ mail -s "Resultados del Escaneo Nmap" richardo94ac@egmail.com < servicios_detect
 cat servicios_detectados.txt
 cat resultado_nmap.txt | grep "open"
 #vemos dentro del archivo que nos hemos mandado que puertos tiene abiertos
+
+#con esta información ya podemos hacer un ataque a la máquina dependiendo de los servicios y puertos que tenga abiertos usando metasploitable o searchsploit
