@@ -4,3 +4,6 @@ nmap -p 1-5000 127.0.0.1 -oN resultado_nmap.txt #le escaneamos los puertos del 1
 #le añadimos el archivo de texto donde mandara los resultados
 mail -s "Resultados Nmap" richardo94ac@gmail.com < resultado_nmap.txt
 #le añadimos que nos mande por correo los resultados para poder realizar el ataque. 
+
+cat resultado_nmap.txt | grep "open"
+#vemos dentro del archivo que nos hemos mandado que puertos tiene abiertos
