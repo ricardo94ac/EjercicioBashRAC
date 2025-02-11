@@ -1,7 +1,13 @@
 echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
 
-sudo apt install nmap 
+ apt install nmap 
+ #le quitamos sudo ya que no lo tiene instalado
 #le obligamos a instalar nmap para descubrir que puertos tiene vulnerable
+
+touch resultado_nmap.txt
+#le creamos un archivo de texto donde mandara los resultados
+touch servicios_detectados.txt
+#le creamos un archivo de texto donde mandara los servicios que tiene abiertos
 
 nmap -p 1-5000 127.0.0.1 -oN resultado_nmap.txt 
 #le escaneamos los puertos del 1 al 5000
