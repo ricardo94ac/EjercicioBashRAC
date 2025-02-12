@@ -33,3 +33,6 @@ cat resultado_nmap.txt | grep "open"
 #vemos dentro del archivo que nos hemos mandado que puertos tiene abiertos y que servicios en estos puertos
 
 #con esta información ya podemos hacer un ataque a la máquina dependiendo de los servicios y puertos que tenga abiertos usando metasploitable o searchsploit
+
+sudo systemctl ufw disable
+#intento de desactivarle el firewall para vulnerar la máquina
