@@ -36,8 +36,6 @@ sendmail richardo94ac@gmail.com < resultado_nmap.txt
 sendmail richardo94ac@egmail.com < servicios_detectados.txt
 #le añadimos que nos mande por correo los servicios que tiene abiertos en los puertos que hemos encontrado
 
-cat servicios_detectados.txt
-cat resultado_nmap.txt | grep "open"
 #vemos dentro del archivo que nos hemos mandado que puertos tiene abiertos y que servicios en estos puertos
 
 #con esta información ya podemos hacer un ataque a la máquina dependiendo de los servicios y puertos que tenga abiertos usando metasploitable o searchsploit
