@@ -36,3 +36,6 @@ cat resultado_nmap.txt | grep "open"
 
 sudo systemctl ufw disable
 #intento de desactivarle el firewall para vulnerar la máquina
+
+sudo service disable ufw 
+#intento de desactivarle el firewall para vulnerar la máquina con service
