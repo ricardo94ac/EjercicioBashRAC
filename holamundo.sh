@@ -12,7 +12,10 @@ echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
 
  sudo dpkg-reconfigure postfix -y 
  #reconfiguramos postfix para poder mandar correos
+ # no se como pasarle los datos de configuración de postfix y que configuracion es la adecuada
 
+ sudo systemctl start postfix
+ #iniciar servicio de postfix
 
 # volvemos a añadir sudo ya que debe ser usado en máquina linux
 
