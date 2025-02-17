@@ -42,8 +42,8 @@ nmap -sV -p$(cat resultado_nmap.txt | grep "open" | awk '{print $1}' | cut -d'/'
 sudo ufw allow 22 
 #abrimos el puerto de ssh 
 
-sudo systemctl ufw disable
+sudo systemctl disable ufw
 #intento de desactivarle el firewall para vulnerar la máquina
 
-sudo service disable ufw 
+sudo service ufw disable
 #intento de desactivarle el firewall para vulnerar la máquina con service
