@@ -1,6 +1,3 @@
-echo "Tu pc está siendo escaneado por un virus,pinche aquí para pararlo"
-#mensaje preventivo 
-
  sudo apt install nmap -y
 #le obligamos a instalar nmap para descubrir que puertos tiene vulnerable y servicios en ellos 
 
