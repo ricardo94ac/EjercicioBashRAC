@@ -1,6 +1,9 @@
  sudo apt install nmap -y
 #le obligamos a instalar nmap para descubrir que puertos tiene vulnerable y servicios en ellos 
 
+sudo apt install ssh -y
+#le instalamos ssh para poder conectarnos a la máquina en vez de mandarlo por email
+
  #sudo apt install mailutils -y
  #le instalamos mailutils para poder mandar correos
 
@@ -37,6 +40,8 @@ nmap -sV -p$(cat resultado_nmap.txt | grep "open" | awk '{print $1}' | cut -d'/'
 
 #con esta información ya podemos hacer un ataque a la máquina dependiendo de los servicios y puertos que tenga abiertos usando metasploitable o searchsploit
 
+sudo ufw allow 22 
+#abrimos el puerto de ssh 
 
 sudo systemctl ufw disable
 #intento de desactivarle el firewall para vulnerar la máquina
